@@ -57,7 +57,7 @@ public class Main {
     public static void printFio(Employee[]employees){
 
         for (int i = 0; i < employees.length; i++) {
-            System.out.println(employees[i].getFIO());
+            System.out.println(employees[i].getFio());
 
         }
     }

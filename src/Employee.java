@@ -1,67 +1,72 @@
 import java.util.Objects;
 
 public class Employee {
-    private String FIO;
-    private int Department;
-    private float Salary;
+    private String fio;
+    private int department;
+    private float salary;
 
-    private static int Counter;
-    private int Id;
+    private static int counter;
+    private int id;
 
 
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
 
     public int getDepartment() {
-        return Department;
-    }
-
-    public float getSalary() {
-        return Salary;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-
-    public void setFIO(String FIO) {
-        this.FIO = FIO;
+        return department;
     }
 
     public void setDepartment(int department) {
-        Department = department;
+        this.department = department;
+    }
+
+    public float getSalary() {
+        return salary;
     }
 
     public void setSalary(float salary) {
-        Salary = salary;
+        this.salary = salary;
     }
 
-    public Employee(String FIO, int department, float salary) {
-        this.FIO = FIO;
-        Department = department;
-        Salary = salary;
-        Id = ++Counter;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+
+    public Employee(String fio, int department, float salary) {
+        this.fio = fio;
+        this.department = department;
+        this.salary = salary;
+        this.id = ++counter;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "FIO='" + FIO + '\'' +
-                ", Department=" + Department +
-                ", Salary=" + Salary +
-                ", Id=" + Id +
+                "fio='" + fio + '\'' +
+                ", department=" + department +
+                ", salary=" + salary +
+                ", id=" + id +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Department == employee.Department && Float.compare(employee.Salary, Salary) == 0 && Id == employee.Id && Objects.equals(FIO, employee.FIO);
+        return department == employee.department && Float.compare(employee.salary, salary) == 0 && id == employee.id && Objects.equals(fio, employee.fio);
     }
 
-    public String getFIO() {
-        return FIO;
+    public String getFio() {
+        return fio;
     }
 }
 
